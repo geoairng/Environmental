@@ -1,4 +1,4 @@
-from sqlmodel import SQLModel
+"""from sqlmodel import SQLModel
 
 from sqlmodel import Field, Relationship
 from typing import Optional,List, TYPE_CHECKING
@@ -58,4 +58,4 @@ class CompanyOut(SQLModel):
 
 #class UserData(UserOut):
     #companies: List[CompanyOut]
-    
+    """

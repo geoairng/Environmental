@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .router import login, users, facility
+from .router import router
 
 app = FastAPI()
 
@@ -15,9 +15,10 @@ app.add_middleware(
 
 )
 
-app.include_router(login.app)
-app.include_router(users.app)
-app.include_router(facility.app)
+#app.include_router(login.app)
+#app.include_router(users.app)
+#app.include_router(facility.app)
+app.include_router(router.app)
 
 @app.get('/')
 async def hello():

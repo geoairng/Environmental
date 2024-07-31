@@ -1,4 +1,4 @@
-from fastapi import Depends, APIRouter, HTTPException
+"""from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 from app.models.users import Company, CreateCompany, CompanyOut, LoginCred, PasswordData, PlainText
 from app.database.db import get_session
@@ -81,7 +81,7 @@ async def profile(id: int, company: Company = Depends(Token_Data.get_current_com
     if not part_company:
         raise HTTPException(404, detail= f"No company with an id {id}")
    
-    return part_company
+    return part_company"""
 
 
 

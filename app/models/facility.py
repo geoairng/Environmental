@@ -1,4 +1,4 @@
-from sqlmodel import Field, Relationship, SQLModel
+"""from sqlmodel import Field, Relationship, SQLModel
 from typing import Optional,List, TYPE_CHECKING
 import sqlalchemy
 from datetime import datetime
@@ -26,7 +26,7 @@ class Facility(SQLModel, table= True):
 class CreateFacility(SQLModel):
     location: str
     facility_type: str
-    company_id: int
+    company_id: int"""
 
 
     

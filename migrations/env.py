@@ -7,9 +7,11 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 
+
 from sqlmodel import SQLModel
 from app.config.config import setting
-from app.models import users, facility, emission
+#from app.models import users, facility, emission
+from app.models import model
 
 
 

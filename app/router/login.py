@@ -1,4 +1,4 @@
-from fastapi import Depends, HTTPException, APIRouter
+"""from fastapi import Depends, HTTPException, APIRouter
 from sqlmodel import Session, select
 from app.models.users import Company, PlainText, LoginCred, ForgetPassword
 from app.database.db import get_session
@@ -44,4 +44,4 @@ async def Login(details:OAuth2PasswordRequestForm = Depends(), db: Session = Dep
         raise HTTPException(status_code= 401, detail = "Incorrect Email or password")
     
     token:str = Token_Data.get_access_token({"email": details.username})
-    return LoginCred(access_token = token, token_type = "bearer")
+    return LoginCred(access_token = token, token_type = "bearer")"""

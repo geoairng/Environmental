@@ -1,4 +1,4 @@
-from sqlmodel import Field, Relationship, SQLModel
+"""from sqlmodel import Field, Relationship, SQLModel
 from typing import Optional, List, TYPE_CHECKING
 import sqlalchemy
 from datetime import datetime
@@ -20,7 +20,7 @@ class Emission(SQLModel, table= True):
     ForeignKey("facility.id", ondelete="CASCADE"), nullable= False), default = None)
     facility: List["Facility"] = Relationship(back_populates= "emissions", sa_relationship_kwargs={'lazy': 'selectin'})
     created_at: datetime = Field(default_factory=datetime.utcnow, sa_column=sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.utcnow))
-    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow))
+    updated_at: datetime = Field(default_factory=datetime.utcnow, sa_column=sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow))"""
 
 
 

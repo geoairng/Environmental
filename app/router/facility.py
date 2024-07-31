@@ -1,4 +1,4 @@
-from fastapi import Depends, APIRouter, HTTPException
+"""from fastapi import Depends, APIRouter, HTTPException
 from sqlmodel import Session, select
 from app.models.facility import Facility, CreateFacility
 from app.models.users import Company
@@ -75,7 +75,7 @@ async def company_with_facility(company_id: int, facility_type:str | None= None,
     if not facility:
         raise HTTPException(status_code = 409, detail= f"This facility does not exist")
     
-    return facility
+    return facility"""
 
 
 
