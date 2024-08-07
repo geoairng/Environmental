@@ -22,3 +22,9 @@ class Company(SQLModel, table=True):
     name: str
     email: EmailStr
     facilities: List[Facility] = Relationship(back_populates="company")
+
+class EmissionOutPut(SQLModel):
+    emission_value: float
+    gas_type: str
+    lat: float
+    long: float
