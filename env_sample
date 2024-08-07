@@ -1,8 +1,0 @@
-## change the name of this file to .env and dont forget to remove this line ##
-
-
-database_name=postgresql+asyncpg://postgres:password123@localhost:5432/environment
-
-algorithm= HS256
-secret_key=
-expiry_time=30
