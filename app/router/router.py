@@ -10,12 +10,13 @@ import pickle
 # Initialize FastAPI app
 app = APIRouter()
 
-model_list = ["co2_model.pkl", "nox_model.pkl", "methane_model.pkl"]
-model_dict = {1,2,3,4}
+model_list = ["methane_model_data.pkl"]
+model_data_dict = {}
 
 for name in model_list:
-    with open(f'../../../{name}', 'rb') as model_file:
-        model_dict[name[:-4]] = pickle.load(model_file)
+    with open(f'{name}', 'rb') as model_file:
+        model_data_dict[name[:-4]] = pickle.load(model_file)
+        
 
 @app.get("/emission", response_model = EmissionOutPut)
 async def get_emission(gas_type: str, loc: str):
@@ -35,8 +36,10 @@ async def get_emission(gas_type: str, loc: str):
         raise HTTPException(404, detail= "Geocode failed")
     
     data = await (fetch_weather_data_async(lat, long))
-
-    result = model_dict[f"{gas_type.lower()}_model"].predict(data)
+    model_data = model_data_dict[f"{gas_type.lower()}_model_data"]
+    scaled_data = model_data['scalerX'].transform(data)
+    scaled_result = model_data["model"].predict(scaled_data)
+    result = model_data['scalery'].inverse_transform(scaled_result.reshape(-1,1)).ravel()
     OutputData = EmissionOutPut(lat = lat, long = long, gas_type = gas_type, emission_value = result[0])
     return OutputData
     

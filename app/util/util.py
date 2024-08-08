@@ -87,13 +87,16 @@ def fetch_weather_data(lat, long):
     return data_dict
 
 
-
+'''['cloud_fraction_current', 'radiation_current', 'latitude', 'longitude',
+       'nox_mixing_ratio_difference']
+'''
 async def fetch_weather_data_async(latitude, longitude):
     loop = asyncio.get_running_loop()
     data_dict = await loop.run_in_executor(None, fetch_weather_data, latitude, longitude)
-    data_list = [[data_dict["cloud_cover_mean"], data_dict["latitude"], data_dict["longitude"], data_dict["mixing_ratio_difference"]]]
+    print(data_dict)
+    data_list = [[data_dict["cloud_cover_mean"], data_dict["shortwave_radiation_sum"], data_dict["latitude"], data_dict["longitude"]]]
     
     return data_list
 
-#data = asyncio.run(fetch_weather_data_async(4.5, 5.4))
-#print(data)
+# data = asyncio.run(fetch_weather_data_async(4.5, 5.4))
+# print(data)
